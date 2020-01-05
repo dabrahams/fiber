@@ -7,24 +7,12 @@ let package = Package(
         .library(name: "Fiber", targets: ["Fiber"])
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/tris-code/platform.git",
-            .branch("master")),
-        .package(
-            url: "https://github.com/tris-code/linked-list.git",
-            .branch("master")),
-        .package(
-            url: "https://github.com/tris-code/async.git",
-            .branch("master")),
-        .package(
-            url: "https://github.com/tris-code/time.git",
-            .branch("master")),
-        .package(
-            url: "https://github.com/tris-code/log.git",
-            .branch("master")),
-        .package(
-            url: "https://github.com/tris-code/test.git",
-            .branch("master"))
+        .package(path: "../Platform"),
+        .package(path: "../LinkedList"),
+        .package(path: "../Async"),
+        .package(path: "../Time"),
+        .package(path: "../Log"),
+        .package(path: "../Test")
     ],
     targets: [
         .target(name: "CCoro"),
