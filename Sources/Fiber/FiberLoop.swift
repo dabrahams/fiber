@@ -4,8 +4,6 @@ import Async
 import Platform
 import ListEntry
 
-import class Foundation.Thread
-
 extension FiberLoop {
     struct Watchers {
         var read: UnsafeMutablePointer<Fiber>?
@@ -38,7 +36,7 @@ public class FiberLoop {
     public private(set) static var main = FiberLoop()
     private static var _current = ThreadSpecific<FiberLoop>()
     public class var current: FiberLoop {
-        if isMainThread {
+        if Thread.isMain {
             return main
         }
         return FiberLoop._current.get() {
