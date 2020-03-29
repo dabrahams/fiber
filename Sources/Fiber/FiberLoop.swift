@@ -36,12 +36,9 @@ public class FiberLoop {
     public private(set) static var main = FiberLoop()
     private static var _current = ThreadSpecific<FiberLoop>()
     public class var current: FiberLoop {
-        if Thread.isMain {
-            return main
-        }
-        return FiberLoop._current.get() {
-            return FiberLoop()
-        }
+        Thread.isMain
+            ? main
+            : FiberLoop._current.get() { FiberLoop() }
     }
 
     var deadline = Time.distantFuture
