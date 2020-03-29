@@ -7,12 +7,12 @@ let package = Package(
         .library(name: "Fiber", targets: ["Fiber"])
     ],
     dependencies: [
-        .package(path: "../Platform"),
-        .package(path: "../LinkedList"),
-        .package(path: "../Async"),
-        .package(path: "../Time"),
-        .package(path: "../Log"),
-        .package(path: "../Test")
+        .package(path: "../platform"),
+        .package(path: "../linked-list"),
+        .package(path: "../async"),
+        .package(path: "../time"),
+        .package(path: "../log"),
+        .package(path: "../test")
     ],
     targets: [
         .target(name: "CCoro"),
